@@ -38,13 +38,13 @@ from sqlalchemy import create_engine
 
     - Use the context manager to get a connection from the engine object
 
-```python
-   from sqlalchemy import text
+      ```python
+         from sqlalchemy import text
 
-   with engine.connect() as conn:
-      result = conn.execute(text("select 'hello world'"))
-       print(result.all())
-```
+         with engine.connect() as conn:
+            result = conn.execute(text("select 'hello world'"))
+            print(result.all())
+      ```
 
 2.  The `Result` object.
 

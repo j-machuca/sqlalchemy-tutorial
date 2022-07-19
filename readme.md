@@ -47,6 +47,7 @@ from sqlalchemy import create_engine
       ```
 
     - In order for changes to be saved to the DB they need to be committed we need to call the `Connection.commit()` method.
+
       _Setting the `autocommit` parameter on the engine is possible_
 
     #### There are two approaches:

@@ -1,7 +1,5 @@
 # SQLAlchemy Tutorial
 
-## Using SQLAlchemy
-
 ### Using the SQLAlchemy Engine
 
 ---
@@ -34,12 +32,12 @@ from sqlalchemy import create_engine
    engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
    ```
 
-**3.** Working with transactions
+**3.** Working with transactions.
 
-When working with the engine there are 2 primary endpoints.
+    -When working with the engine there are 2 primary endpoints.
 
-1.  The `Connection`
-2.  The `Result`
+      1.  The `Connection`
+      2.  The `Result`
 
 ### Using the SQLAclhemy ORM
 

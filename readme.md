@@ -18,7 +18,7 @@ from sqlalchemy import create_engine
 
    1. Depending on the **DB provider** (i.e. PostgreSQL, SQLite, MySQL, etc.) the URL string passed to the `create_engine()` function will change.
    2. The **_echo_** parameter passed to `create_engine()` instructs the engine to log all the SQL it emits to a Python logger that will write to standard out.
-   3. The future parameter will instruct the engine allow us to use the **2.0 style**
+   3. The **_future_** parameter will instruct the engine allow us to use the **2.0 style**
 
 **For PostreSQL**
 

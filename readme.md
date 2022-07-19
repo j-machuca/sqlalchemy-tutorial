@@ -1,6 +1,6 @@
 # SQLAlchemy Tutorial
 
-### Using the SQLAlchemy Engine
+### Using the SQLAlchemy Core
 
 ---
 
@@ -36,7 +36,7 @@ from sqlalchemy import create_engine
 
 1.  The `Connection` object.
 
-    - Use the context manager to get a connection from the engine object
+    - Use the context manager to get a connection object from the engine.
 
       ```python
          from sqlalchemy import text
@@ -45,6 +45,13 @@ from sqlalchemy import create_engine
             result = conn.execute(text("select 'hello world'"))
             print(result.all())
       ```
+
+    - In order for changes to be saved to the DB they need to be committed we need to call the `Connection.commit()` method.
+      _Setting the `autocommit` parameter on the engine is possible_
+
+    #### There are two approaches:
+
+    1. Commit as you go.
 
 2.  The `Result` object.
 

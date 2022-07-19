@@ -34,10 +34,10 @@ from sqlalchemy import create_engine
 
 **3.** Working with transactions.
 
-    -When working with the engine there are 2 primary endpoints.
+-When working with the engine there are 2 primary endpoints.
 
-      1.  The `Connection`
-      2.  The `Result`
+1.  The `Connection`
+2.  The `Result`
 
 ### Using the SQLAclhemy ORM
 

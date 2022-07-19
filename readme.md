@@ -21,7 +21,7 @@
    2. The echo parameter passed to `create_engine()` instructs the engine to log all the SQL it emits to a Python logger that will write to standard out.
    3. The future parameter will instruct the engine allow us to use the **2.0 style**
 
-   \*\* For PostreSQL
+   **For PostreSQL**
 
    ```python
    # dialect+driver://username:password@host:port/database

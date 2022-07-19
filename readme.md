@@ -14,7 +14,7 @@ from sqlalchemy import create_engine
 
 ```
 
-**2.** Creating an `engine` instance. For more information on the [Engine](https://docs.sqlalchemy.org/en/14/core/engines.html)
+**2.** Creating an `engine` instance. Reference to the [Engine](https://docs.sqlalchemy.org/en/14/core/engines.html) object documentation.
 
 1. Depending on the **DB provider** (i.e. PostgreSQL, SQLite, MySQL, etc.) the URL string passed to the `create_engine()` function will change.
 2. The **_echo_** parameter passed to `create_engine()` instructs the engine to log all the SQL it emits to a Python logger that will write to standard out.

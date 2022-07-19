@@ -34,8 +34,19 @@ from sqlalchemy import create_engine
 
 **3.** Working with transactions. There are Two primary endpoints
 
-1.  The `Connection`
-2.  The `Result`
+1.  The `Connection` object.
+
+    - Use the context manager to get a connection from the engine object
+
+```python
+   from sqlalchemy import text
+
+   with engine.connect() as conn:
+      result = conn.execute(text("select 'hello world'"))
+       print(result.all())
+```
+
+2.  The `Result` object.
 
 ### Using the SQLAclhemy ORM
 

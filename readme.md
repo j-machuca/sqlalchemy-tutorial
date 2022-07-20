@@ -54,6 +54,18 @@ from sqlalchemy import create_engine
 
     1. Commit as you go.
 
+    We need to call the `Connection.commit()` inside the context manager creating the connection.
+
+    ```python
+    with engine.connect() as conn:
+       conn.execute(text("CREATE TABLE some_table(x int,y int)"))
+       conn.execute(text("INSERT INTO some_table (x,y) VALUES (:x,:y)"),
+       [{"x":1,"y":1},{"x":2,"y":2}])
+       conn.commit()
+    ```
+
+    2. Block commit
+
 2.  The `Result` object.
 
 ### Using the SQLAclhemy ORM

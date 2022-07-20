@@ -39,16 +39,16 @@ from sqlalchemy import create_engine
     - Use the context manager to get a connection object from the engine.
 
       ```python
-         from sqlalchemy import text
+      from sqlalchemy import text
 
-         with engine.connect() as conn:
-            result = conn.execute(text("select 'hello world'"))
-            print(result.all())
+      with engine.connect() as conn:
+         result = conn.execute(text("select 'hello world'"))
+         print(result.all())
       ```
 
     - In order for changes to be saved to the DB they need to be committed we need to call the `Connection.commit()` method.
 
-      _Setting the `autocommit` parameter on the engine is possible_
+      _Setting the `autocommit` parameter on the engine is possible._
 
     #### There are two approaches:
 

@@ -85,8 +85,9 @@ from sqlalchemy import create_engine
 
       _When executing the `Session.execute` method when using the ORM we get the same `Result` interface used by **Core**._
 
-      1.  Fetching Rows
-      2.  When fetching rows from the database the `Result` object is returned and represents an iterable object of result rows.
+      #### Fetching rows
+
+      1.  When fetching rows from the database the `Result` object is returned and represents an iterable object of result rows.
 
       ```python
       with engine.connect() as conn:

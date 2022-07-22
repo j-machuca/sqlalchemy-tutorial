@@ -100,7 +100,7 @@ from sqlalchemy import create_engine
 
          1. Fetching methods
 
-            - `Results.all` method.
+            1. `Results.all` method.
 
          2. Access rows.
 

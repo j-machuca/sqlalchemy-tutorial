@@ -96,6 +96,58 @@ from sqlalchemy import create_engine
             print(f"x:{row.x} y:{row.y}")
       ```
 
+      2. The `Result` Object has several methods for fetching and transforming rows.
+
+         1. Fetching methods
+
+            - `Results.all` method.
+
+         2. Access rows.
+
+            1. Tuple Assignment (named tuple)
+
+               ```python
+               result = conn.exexute("SELECT x,y FROM some_table")
+
+               for x,y in result:
+                  print(x,y)
+
+               ```
+
+            2. Integer Index
+
+               ```python
+               result = conn.exexute("SELECT x,y FROM some_table")
+
+               for row in result:
+                  x= row[0]
+                  y = row[1]
+               ```
+
+            3. Attribute name. (Matches the name of the column)
+
+               ```python
+               result = conn.exexute("SELECT x,y FROM some_table")
+
+               for row in result:
+                  x = row.x
+
+                  print(f"Row: {x} {row.y}")
+               ```
+
+            4. Mapping Access
+
+               - This is a read only version of the common dict object.
+
+               ```python
+               result = conn.exexute("SELECT x,y FROM some_table")
+
+               for dict_row in results.mappings():
+                  x = dict_row['x']
+                  y = dict_row['y']
+
+               ```
+
 ### Using the SQLAclhemy ORM
 
 ---

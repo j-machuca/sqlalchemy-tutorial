@@ -152,9 +152,12 @@ from sqlalchemy import create_engine
 
                ```
 
-#### Queries and Parameters.
+      3. Queries and Parameters.
 
-1. Sending Parameters
+         1. Sending Parameters
+
+            - The `Connection.execute` method accepts parameters that are refered as bound parameters.
+              _The construct accepts the parameters using a colon format :param_name, the actual value is passed as the second argument to the `Connection.execute` method in form of a dictionary._
 
 ### Using the SQLAclhemy ORM
 

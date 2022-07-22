@@ -1,8 +1,10 @@
 # SQLAlchemy Tutorial
 
-### Using the SQLAlchemy Core
+## Using the SQLAlchemy Core
 
 ---
+
+### Creating the Engine
 
 **1.** Import the `create_engine` function from `sqlalchemy`
 
@@ -32,7 +34,7 @@ from sqlalchemy import create_engine
    engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
    ```
 
-**3.** Working with transactions.
+### Working with transactions.
 
 #### There are Two primary endpoints:
 
@@ -149,6 +151,10 @@ from sqlalchemy import create_engine
                   y = dict_row['y']
 
                ```
+
+#### Queries and Parameters.
+
+1. Sending Parameters
 
 ### Using the SQLAclhemy ORM
 

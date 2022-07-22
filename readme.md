@@ -42,7 +42,7 @@ from sqlalchemy import create_engine
       from sqlalchemy import text
 
       with engine.connect() as conn:
-         result = conn.execute(text("select 'hello world'"))
+         result = conn.execute(text("SELECT 'hello world'"))
          print(result.all())
       ```
 
@@ -66,7 +66,34 @@ from sqlalchemy import create_engine
 
     2. Block commit
 
+       This is the often preffered methong for production because it indicates the intention of the block.
+       This method calls the `Engine.begin` method that handles getting the connection and committing the transactions at the end if succesful
+       or performing a **ROLLBACK** if an execption was raised.
+
+       ```python
+         with engine.begin() as conn:
+            conn.execute(
+               text("INSERT INTO some_table (x,y) VALUES (:x,:y)"),
+               [{"x":1,"y":1},{"x":2,"y":2}]
+            )
+
+       ```
+
 2.  The `Result` object.
+
+    - When we execute a statement with the `Connection.execute` method it returns a `Result` object.
+
+      _When executing the `Session.execute` method when using the ORM we get the same `Result` interface used by **Core**_
+
+    1. Fetching Rows
+    2. When fetching rows from the database the `Result` object is returned and represents an iterable object of result rows.
+
+    ```python
+    with engine.connect() as conn:
+       result = conn.execute(text("SELECT x,y FROM some_table"))
+       for row in result:
+          print(f"x:{row.x} y:{row.y}")
+    ```
 
 ### Using the SQLAclhemy ORM
 

@@ -83,17 +83,17 @@ from sqlalchemy import create_engine
 
     - When we execute a statement with the `Connection.execute` method it returns a `Result` object.
 
-      _When executing the `Session.execute` method when using the ORM we get the same `Result` interface used by **Core**_
+      _When executing the `Session.execute` method when using the ORM we get the same `Result` interface used by **Core**._
 
-    1. Fetching Rows
-    2. When fetching rows from the database the `Result` object is returned and represents an iterable object of result rows.
+      1.  Fetching Rows
+      2.  When fetching rows from the database the `Result` object is returned and represents an iterable object of result rows.
 
-    ```python
-    with engine.connect() as conn:
-       result = conn.execute(text("SELECT x,y FROM some_table"))
-       for row in result:
-          print(f"x:{row.x} y:{row.y}")
-    ```
+      ```python
+      with engine.connect() as conn:
+         result = conn.execute(text("SELECT x,y FROM some_table"))
+         for row in result:
+            print(f"x:{row.x} y:{row.y}")
+      ```
 
 ### Using the SQLAclhemy ORM
 

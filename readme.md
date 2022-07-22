@@ -34,7 +34,7 @@ from sqlalchemy import create_engine
 
 **3.** Working with transactions.
 
-### There are Two primary endpoints:
+#### There are Two primary endpoints:
 
 1.  The `Connection` object.
 

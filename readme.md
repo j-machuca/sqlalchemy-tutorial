@@ -135,7 +135,6 @@ from sqlalchemy import create_engine
 
                for row in result:
                   x = row.x
-
                   print(f"Row: {x} {row.y}")
                ```
 

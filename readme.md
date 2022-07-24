@@ -176,13 +176,13 @@ from sqlalchemy import create_engine
 
             - For statements that operate upon data, but do not return result sets we can send multiple parameters to the `Connection.execute` method by passing a list of dictionaries instead of a single disctionary. This allows a single SQL statement to be invoked against each parameter set individually.
 
-            ```python
-            with engine.connect() as conn:
-               conn.execute(text("INSERT INTO some_table (x,y) VALUES (:x,:y)"),
-                  [{"x":1,"y":1},{"x":2,"y":2}]
-               )
-               conn.commit()
-            ```
+              ```python
+              with engine.connect() as conn:
+                 conn.execute(text("INSERT INTO some_table (x,y) VALUES (:x,:y)"),
+                    [{"x":1,"y":1},{"x":2,"y":2}]
+                 )
+                 conn.commit()
+              ```
 
             - Behind the scenes the `Connection` uses a `cursor.executemany` method.
             - This method performs the equivalent operation of invoking the given SQL statement against each parameter set individually.

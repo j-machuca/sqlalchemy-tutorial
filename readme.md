@@ -159,6 +159,48 @@ from sqlalchemy import create_engine
 
               _The construct accepts the parameters using a colon format :param_name, the actual value is passed as the second argument to the `Connection.execute` method in form of a dictionary._
 
+              ```python
+               with engine.connect() as conn:
+                  result = conn.execute(
+                     text("SELECT x,y FROM some_table WHERE y> :y"),
+                     {"y":2}
+                  )
+                  for row in result:
+                     print(f"x: {row.x}  y:{row.y}")
+
+              ```
+
+              **Never Stringify values directly to a textual SQL - can lead to SQLInjection attacks.**
+
+         2. Sending Multiple Parameters
+
+            - For statements that operate upon data, but do not return result sets we can send multiple parameters to the `Connection.execute` method by passing a list of dictionaries instead of a single disctionary. This allows a single SQL statement to be invoked against each parameter set individually.
+
+            ```python
+            with engine.connect() as conn:
+               conn.execute(text("INSERT INTO some_table (x,y) VALUES (:x,:y)"),
+                  [{"x":1,"y":1},{"x":2,"y":2}]
+               )
+               conn.commit()
+            ```
+
+            - Behind the scenes the `Connection` uses a `cursor.executemany` method.
+            - This method performs the equivalent operation of invoking the given SQL statement against each parameter set individually.
+
+              - The DBAPI may optimize this operation in different ways.
+
+            - When using the ORM the technique is different.
+
+            - Behind the scenes SQLAlchemy's `text` construct uses the `TextClause.bindparams` method to generate the SQL construct.
+
+              ```python
+              stmt = text("SELECT x,y FROM some_table WHERE y>:y ORDER BY x,y").bindparams(y=6)
+
+              with engine.connect() as conn:
+                 for row in result:
+                    print(f"x:{row.x} y:{row.y}")
+              ```
+
 ### Using the SQLAclhemy ORM
 
 ---

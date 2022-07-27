@@ -1,4 +1,4 @@
-## [Working with Database Metadata] (https://docs.sqlalchemy.org/en/14/core/metadata.html)
+## [Working with Database Metadata](https://docs.sqlalchemy.org/en/14/core/metadata.html)
 
 ---
 

@@ -53,13 +53,13 @@
 
    - The collection of `Column` objects can be typically accessed via an associative array located at `Table.c`.
 
-   ```python
-   user_talbe.c.name
-   # Column('name', String(length=30), table=<user_account>)
+     ```python
+     user_talbe.c.name
+     # Column('name', String(length=30), table=<user_account>)
 
-   user_table.c.keys
-   # ['id', 'name', 'fullname']
+     user_table.c.keys
+     # ['id', 'name', 'fullname']
 
-   ```
+     ```
 
 #### Column Object

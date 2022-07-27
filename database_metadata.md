@@ -40,26 +40,26 @@
    - Declaring `Table` objects.
 
      ```python
-         from sqlalchemy import Table,Column,String,Integer
+     from sqlalchemy import Table,Column,String,Integer
 
-         user_table = Table(
-             "user_account",
-             metadata_obj,
-             Column('id',Integer,primary_key=True),
-             Column('name',String(30)),
-             Column('fullname',String),
-         )
+     user_table = Table(
+        "user_account",
+        metadata_obj,
+        Column('id',Integer,primary_key=True),
+        Column('name',String(30)),
+        Column('fullname',String),
+        )
      ```
 
    - The collection of `Column` objects can be typically accessed via an associative array located at `Table.c`.
 
-     ```python
-     user_talbe.c.name
-     # Column('name', String(length=30), table=<user_account>)
+   ```python
+   user_talbe.c.name
+   # Column('name', String(length=30), table=<user_account>)
 
-     user_table.c.keys
-     # ['id', 'name', 'fullname']
+   user_table.c.keys
+   # ['id', 'name', 'fullname']
 
-     ```
+   ```
 
 #### Column Object

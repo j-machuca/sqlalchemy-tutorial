@@ -6,9 +6,9 @@
 
 1. The 3 main components of the Database Metadata in SQLAlchemy are:
 
-   - MetaData
-   - Table
-   - Column
+   - [MetaData](https://docs.sqlalchemy.org/en/14/core/metadata.html#sqlalchemy.schema.MetaData)
+   - [Table](https://docs.sqlalchemy.org/en/14/core/metadata.html#sqlalchemy.schema.Table)
+   - [Column](https://docs.sqlalchemy.org/en/14/core/metadata.html#sqlalchemy.schema.Column)
 
 #### MetaData Object
 
@@ -62,4 +62,26 @@
 
      ```
 
-#### Column Object
+#### [Columns and Data Types](https://docs.sqlalchemy.org/en/14/core/types.html)
+
+1. Declaring Simple Constraints
+
+   1. Primary Key
+
+      - We can declare what `Column` would be the _Primary Key_ for our table by setting the `primary_key` parameter on the `Column`.
+
+        ```python
+        Column('id',Integer,primary_key=True)
+
+        ```
+
+      - We can access the Table's primary key using the `Table.primary_key` attribute on the `Table` object.
+
+        ```python
+
+        user_table.primary_key
+        # PrimaryKeyContraint(Column('id',Integer(),table=<user_account>,primary_key=True,nullable=False))
+
+        ```
+
+   2. Foreign Key

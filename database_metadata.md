@@ -2,7 +2,9 @@
 
 ---
 
-### Components
+### Emitting to the DB using CORE
+
+#### Components
 
 1. The 3 main components of the Database Metadata in SQLAlchemy are:
 
@@ -85,3 +87,35 @@
         ```
 
    2. Foreign Key
+
+      - Foreign keys are commonly declared by explicitly declarring them using the `ForeignKey` object.
+
+      - Datatype for the column is inferred form that of the related column.
+
+        ```python
+        from sqlalchemy import ForeignKey
+        address_table = Table(
+            "address",
+            metadata_obj,
+            Column('id',Integer,primary_key=True),
+            Column('user_id',ForeignKey('user_account.id'),nullable=False),
+            Column('email_address',String(50), nullable=False),
+        )
+        ```
+
+#### Emiting using CORE
+
+1. Creating the Database
+
+   - To create the database we invoke the `MetaData.create_all()` method and providing it our `Engine` object to the `MetaData` object that contains the collection of `Table`s, `Column`s, and `Contraint`s.
+
+     ```python
+     metadata_obj.create_all(engine)
+     ```
+
+   - The `create_all` method contains some SQL to check the existence of a table before emmiting a _CREATE_ statement.
+   - The `drop_all` method will emit a _DROP_ statement as well. _works in reverse order _
+
+### Working with the ORM
+
+#### Defining the tables

@@ -114,8 +114,37 @@
      ```
 
    - The `create_all` method contains some SQL to check the existence of a table before emmiting a _CREATE_ statement.
-   - The `drop_all` method will emit a _DROP_ statement as well. _works in reverse order _
+   - The `drop_all` method will emit a _DROP_ statement as well. _works in reverse order_
 
 ### Working with the ORM
 
 #### Defining the tables
+
+1. Setting up the Registry
+
+   - When using the ORM, the `MetaData` collection is still present but it is contained within an ORM-only object called the `registry`.
+
+     ```python
+     from sqlalchemy.orm import registry
+     mapper_registry = registry()
+
+     mapper_registry.metadata
+     #MetaData()
+     ```
+
+   - Instead of declaring `Table` objects we now declare them indirectly by extending the `Base` class.
+
+     ```python
+         Base = mapper_registry.generate_base()
+     ```
+
+     **TIP**
+
+     - There is a shortcut to create the registry and the base in one step
+
+     ```python
+
+     from sqlalchemy.orm import declarative_base
+     Base = declarative_base()
+
+     ```

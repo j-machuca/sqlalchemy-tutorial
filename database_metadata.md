@@ -148,3 +148,5 @@
      Base = declarative_base()
 
      ```
+
+2. Declaring Mapped Classes

@@ -232,7 +232,7 @@
       def __repr__(self):
           return f"User({self.name!r}, {self.fullname!r})"
 
-    class Address(Base):
+   class Address(Base):
       __table__ = address_table
 
       user = relationship("User", back_populates="addresses")

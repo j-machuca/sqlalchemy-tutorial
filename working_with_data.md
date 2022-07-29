@@ -1,0 +1,51 @@
+## Working with Data
+
+---
+
+- Every time we are working with data our interactions are always scoped to transactions even if we use the `autocommit` feature.
+
+### Inserting Rows with Core
+
+1.  The insert() SQL Expression Construct.
+
+    1. We can use an instance of the insert statement provided by sqlalchemy.
+
+    ```python
+    from sqlalchemy import insert
+    stmt = insert(user_table).values(name="Spongebob",fullname="Spongebob Squarepants")
+    ```
+
+    2. The statement can be printed out.
+
+    ```python
+    print(stmt)
+    # INSERT INTO user_account (name, fullname) VALUES (:name, :fullname)
+    ```
+
+    3. We can access the `compile` method to obtain the compiled object and access its values.
+
+    ```python
+    compiled = stmt.compile()
+    print(compiled.params)
+    #{'name': 'spongebob', 'fullname': 'Spongebob Squarepants'}
+    ```
+
+2.  Executing the Statement
+
+    1. The insert statement does not return any rows, any if only one row is inserted, it will usually include the ability to return information about the column level default values generated during the **INSERT** most commonly the primary key.
+
+    **Can be accessed by the `CursorResult.inserted_primary_key`**
+
+        ```python
+        with engine.connect() as conn:
+            result = conn.execute(stmt)
+            conn.commit()
+            print(result.inserted_primary_key)
+            #(1,)
+        ```
+
+    **As of version 1.4.8 the tuple returned is now a named tuple with a `Row` object.**
+
+### Selecting Rows with Core or ORM
+
+### Updating and Deleting Rows with Core

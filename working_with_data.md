@@ -46,6 +46,24 @@
 
     **As of version 1.4.8 the tuple returned is now a named tuple with a `Row` object.**
 
+3.  Insert Construct and the "values" clause.
+
+    1. The `Insert` construct generates the `VALUES` clause from the parameters passed to the `Connection.execute()` method.
+
+       ```python
+       with engine.connect() as conn:
+           result = conn.execute(
+               insert(user_table),
+               [
+                   {"name":"sandy", "fullname" : "Sandy Cheeks"},
+                   {"name":"patrick", "fullname" : "Patrick Star"},
+               ]
+           )
+           conn.commit()
+       ```
+
+       - In the example above we can see that the `Insert` construct can execute multiple SQL statements. We can pass a dictionary or a list of dictionaries to the `Connection.execute` method without having to explicitly spell out the `VALUES` clause.
+
 ### Selecting Rows with Core or ORM
 
 ### Updating and Deleting Rows with Core

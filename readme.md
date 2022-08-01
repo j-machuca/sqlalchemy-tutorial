@@ -5,13 +5,14 @@
 1. [SQLAlchemy Core](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/basics/core.md)
 2. [SQLAlchemy ORM](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/basics/orm.md)
 
-## Defining Tables
+## [Metadata](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/metadata)
 
 1. [Database Metadata](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/metadata/database_metadata.md)
 
-## Working with Data and transactions
+## [Working with Data and Transactions](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/working_with_data.md)
 
-1. [Working with Data](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/working_with_data.md)
+1. [Inserts](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/inserts.md)
+2. [Selects](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/selects.md)
 
 ## Advanced Concepts
 

@@ -84,6 +84,36 @@
 
        ```
 
+5.  INSERT ... RETURNING
+
+    1. The `RETURNING` clause for insert statements is used automatically for supported backends to retrieve the primary key value as well as server defaults.
+
+    2. We can also explicitly specify the `RETURNING` clause by using the `Insert.returning` method. This will return a `Result` object with rows that can be fetched.
+
+       ```python
+       insert_stmt = insert(address_table).returning(address_table.c.id,address_table.c.email_address)
+       print(insert_stmt)
+
+       # INSERT INTO address (id, user_id, email_address) VALUES (:id, :user_id, :email_address) RETURNING address.id, address.email_address
+       ```
+
+    3. The `RETURNING` clause can also be used with the `Insert.from_select` method.
+
+       ```python
+       select_stmt = select(user_table.c.id,user_table.c.name+"@aol.com")
+       insert_stmt = insert(address_table).from_select(
+           ["user_id","email_address"],select_stmt
+           )
+       print(insert_stmt)
+
+       # INSERT INTO address (user_id, email_address)
+       # SELECT user_account.id, user_account.name || :name_1 AS anon_1
+       # FROM user_account RETURNING address.id, address.email_address
+
+       ```
+
+    \_The `RETURNING` feature is also supported by `UPDATE` and `DELETE` statements. Generally the `RETURNING` feature is only supported by statment executions with a single set of parameters. `psycopg2` supports `INSERT` of many rows at once.
+
 ### Selecting Rows with Core or ORM
 
 ### Updating and Deleting Rows with Core

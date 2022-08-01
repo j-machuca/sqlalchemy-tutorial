@@ -106,4 +106,4 @@
 
        ```
 
-    \_The `RETURNING` feature is also supported by `UPDATE` and `DELETE` statements. Generally the `RETURNING` feature is only supported by statment executions with a single set of parameters. `psycopg2` supports `INSERT` of many rows at once.
+    _The `RETURNING` feature is also supported by `UPDATE` and `DELETE` statements. Generally the `RETURNING` feature is only supported by statment executions with a single set of parameters. `psycopg2` supports `INSERT` of many rows at once._

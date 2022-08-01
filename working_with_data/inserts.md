@@ -1,9 +1,3 @@
-## Working with Data
-
----
-
-- Every time we are working with data our interactions are always scoped to transactions even if we use the `autocommit` feature.
-
 ### Inserting Rows with Core
 
 1.  The insert() SQL Expression Construct.
@@ -113,7 +107,3 @@
        ```
 
     \_The `RETURNING` feature is also supported by `UPDATE` and `DELETE` statements. Generally the `RETURNING` feature is only supported by statment executions with a single set of parameters. `psycopg2` supports `INSERT` of many rows at once.
-
-### Selecting Rows with Core or ORM
-
-### Updating and Deleting Rows with Core

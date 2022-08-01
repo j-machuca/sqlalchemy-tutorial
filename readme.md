@@ -4,3 +4,7 @@
 2. [SQLAlchemy ORM](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/orm.md)
 3. [Database Metadata](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/database_metadata.md)
 4. [Working with Data](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data.md)
+
+# Advanced Concepts
+
+1. [Scalar Subquery](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/scalar_subquery.md))

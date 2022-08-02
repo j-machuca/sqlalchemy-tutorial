@@ -1,7 +1,5 @@
 ## Using the SQLAlchemy Core
 
----
-
 ### Creating the Engine
 
 **1.** Import the `create_engine` function from `sqlalchemy`

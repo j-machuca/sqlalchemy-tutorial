@@ -1,7 +1,5 @@
 ## Using the SQLAclhemy ORM
 
----
-
 ### Working with Session
 
 1. Executing with an ORM Session ([Working with Session](https://docs.sqlalchemy.org/en/14/orm/session_basics.html#id1))

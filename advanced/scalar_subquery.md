@@ -1,7 +1,5 @@
 ## Scalar Subquery
 
----
-
 ### Performing a Scalar Subquery
 
 1. The main use for _Scalar Subqueries_ is to generate additional **VALUES** from the parameters from the main **QUERY**.

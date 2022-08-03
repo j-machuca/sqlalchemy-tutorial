@@ -37,3 +37,27 @@
    # (1, 'spongebob', 'Spongebob Squarepants')
 
    ```
+
+3. When using the ORM with the `select` construct we execute it using the `Session.execute` method on the `Session` object.
+
+- Using this approach we still get `Row` objects however, they are capable or returning the `Instance` of the class for each element within the row.
+
+  ```python
+  stmt = select(User).where(User.name=="spongebob")
+  with Session(engine) as session:
+    for row in session.execute(stmt):
+      print(row)
+
+  # BEGIN (implicit)
+  # SELECT user_account.id, user_account.name, user_account.fullname
+  # FROM user_account
+  # WHERE user_account.name = ?
+  # [...] ('spongebob',)
+
+  # Result
+
+  # (User(id=1, name='spongebob', fullname='Spongebob Squarepants'),)
+
+  ```
+
+### Setting COLUMNS and FROM clause

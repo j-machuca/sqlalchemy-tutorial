@@ -9,7 +9,7 @@
 
 1. [Database Metadata](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/metadata/database_metadata.md)
 
-## [Working with Data and Transactions](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/working_with_data.md)
+## [Working with Data and Transactions](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/readme.md)
 
 1. [Inserts](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/inserts.md)
 2. [Selects](https://github.com/j-machuca/sqlalchemy-tutorial/blob/master/working_with_data/selects.md)
